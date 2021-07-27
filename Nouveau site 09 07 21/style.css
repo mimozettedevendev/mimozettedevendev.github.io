@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Titillium+Web:wght@200&display=swap');
+/*import des polices d'écritures pour le document*/
+html{
+    scroll-behavior: smooth; /*pour que le scrolling soit plus doux*/
+}
+*{
+    margin:0; /*pour que tous les réglages partent à 0*/
+    padding:0;
+}
+
+body{
+    font-family: 'Otomanopee One', 'sans-serif'; /*police d'écriture choisies pour le document entier*/
+    min-height: 100%; /*pour que le site prenne toute la page*/
+    margin: 0 auto;
+    position: relative; /*pour le positionnement du texte : le relatif et absolue sont encore un peu confus pour moi, mais avec un peu d'entrainement ça devrait s'améliorer*/
+}
+
+ul{
+    margin: 40px; /*j'ai mis une bannière un peu grande pour qu'elle ressorte bien, mais j'ai laissé la place pour le titre*/
+    padding: 10px;/*une marge intérieur pour augmenter l'espace et aérer un peu*/
+}
+
+li{
+    list-style-type: none;/*commande pour enlever les points de la liste, il n'y en a pas besoin ici*/
+}
+
+h2{
+    text-transform: uppercase; /*pour mettre le texte en majuscule*/
+    text-align: center; /*pour centrer le titre*/
+    padding-top: 50px; /* ajuste la taille entre le bord du haut et le texte en lui même*/
+    font-size: 2em; /*taille du texte en em pour que ça s'ajuste aux différentes tailles d'écran*/
+    text-shadow: 2px 3px 1px gray; /* pour ajouter une ombre derrière le texte */
+    margin-bottom: 40px; /*une marge pour séparer le titre du texte*/
+    animation: titre ease 2.5s; /*animation sur le titre h2*/
+}
+
+/**************** Barre de Navigation**************** */
+.blocpage{
+    margin-top: 10px; /*une marge en haut de 40 pixel*/
+    width: 100%; /* une largeur de 100% pour que ça aille de gauche à droite*/
+    overflow: hidden; /*pour que tout ce qui dépasse soit caché */
+    background-color: rgb(250, 151, 70); /*pour mettre un fond coloré derrière le texte qui tranche sur le fond d'écran*/
+    position: fixed; /*pour que la barre de navigation soit fixe et qu'elle ne descende pas si on scrolle*/
+    opacity: 0.9; /*pour que le fond coloré derrière le texte soit légèrement transparent*/
+}
+
+li{
+   float: right ; /*j'ai aligné à droite les liens hypertext de ma barre de navigation*/
+   font-size: 1.2em; /*j'ai ajusté la taille du texte en em pour que la taille du texte s'ajuste à la taille de l'écran*/
+}
+
+li a{
+    text-decoration: none; /* j'ai enlevé les points de listing sur les listes et les liens hypertext*/
+    color: whitesmoke; /*j'ai changé la couleur du texte pour qu'elle ressorte mieux sur le fond*/
+    display: inline; /*je veux que les liens restent en ligne*/
+    padding: 18px 18px; /*marges intérieures pour aérer*/
+}
+
+/* *****************Fond d'écran*********** */
+#cafe{
+    position: absolute;
+    bottom: 0px; /*pour que l'image commence tout en haut du site*/
+    background: url(cafe.jpg) no-repeat 50% 50%; /*l'url pour retrouver l'image, no repeat pour qu'elle ne soit pas répété, fixed pour qu'elle ne bouge pas, et 50% 50% pour qu'elle soit centrée */
+    background-size: cover; /* pour que l'image couvre toute la largeur de la page*/
+    height: 80vh; /*limiter la hauteur de l'image à 500 pixel*/
+} /*nb : je ne suis pas satisfaite de la façon dont mon image de fond se positionne. Malgré le fait que j'ai utilisé la fonction "fixed" elle bouge alors que je voulais qu'elle reste fixe tandis que le texte monte ou descend. Je ne comprends pas ce que j'ai fait de travers.*/
+
+h1{ /*les caractéristiques de h1*/
+    font-family: 'Parisienne', 'cursive', 'sans-serif'; /*une police d'écriture de type manuscrite parce que j'aime la calligraphie*/
+    color: black; /*couleur du texte*/
+    font-size: xx-large;
+    margin-top: 0; /*je veux qu'elle soit collée en haut*/
+    position: fixed; /* je ne veux pas que ça bouge, je veux qu'elle reste fixe avec la banniere qui contient les liens => là ça fonctionne !*/
+    background-color: blanchedalmond; /*couleur du fond*/
+    background-size: 100%; /*pour que ça prenne toute la ligne*/
+    width: 100%; /*largeur*/
+}
+
+#presentation{
+    text-align: justify; /*pour que le texte soit justifié*/
+}
+/* ************** Texte de présentation et photo**************** */
+
+.container{/*je voulais que mon texte et la présentation se présentent cote à cote, j'ai donc mis dans un conteneur et utilisé la fonction display flex*/
+    display: flex;
+    flex-direction: row; /*pour que les deux éléments soient cote à cote*/
+    flex-wrap: wrap; /* pour que les éléments aillent à la ligne en cas de changement de taille de l'image*/
+    justify-content: space-around; /*pour que les blocs s'alignent de façon harmonieuse, je ne crois pas que ça fonctionne.*/
+    vertical-align: top;
+    width: 100%; /*pour que le container qui contient les deux éléments prennent toute la largeur de la page*/
+    margin-left: 5px; /*une petite marge à gauche*/
+}
+.clignote{
+    text-decoration-line: Blink; /*je voulais que le texte clignote mais ça ne fonctionne pas*/
+}
+
+.présentation{ /*pour mettre en forme le texte de présentation*/
+    border-style: double; /*le style de la bordure présente 2 traits fin*/
+    border-radius: 10px; /*un petit arrondi sur les bords*/
+    text-align: justify;/*pour que le texte soit justifié*/
+    flex-grow: 3; /*pour que cette partie prenne 3/4 de l'image*/
+    width: 60%; /*pour que cette partie prenne 60% de la largeur, je pense que ça rentre peut-être en conflit avec la commande du dessus mais depuis que j'ai ajusté comme ça, c'est mieux, alors je laisse*/
+    padding: 40px; /*une marge intérieur pour aérer un peu*/
+}
+h3{
+    text-align: center; /*pour centrer le texte*/
+}
+.photo{ /*pour tout le petit paragraphe au dessous de la photo*/
+    flex-grow: 1; /*pour que cette partie prenne 1/4 de l'image*/
+    background-color: burlywood; /*le fond de couleur sous le texte*/
+    border-radius: 10px; /*encore une arrondi sur les angles*/
+    padding: 10px; /*petite marge intérieure*/
+    color:black; /*couleur du texte*/
+    font-size: 0.9em; /*taille du texte*/
+    height: auto; /*pour que la hauteur s'adapte au texte*/
+    width: 80px; /*limiter la largeur de l'élément*/
+    
+}
+#ma_photo_mini{
+    padding: 20px; /*pour que le texte ne soit pas collé à la photo*/
+    float:center; /*pour que la photo soit centrée*/
+}
+#dessinordinateur{
+    text-align: center; /*je voulais centrer mon dessin d'ordinateur mais je n'y arrive pas et je n'ai plus le temps*/
+    margin: auto;
+    display: flex;
+}
+
+
+/* ************* bas de page ************* */
+footer{
+    text-align: center; /*pour centre le texte*/
+    background-color: blanchedalmond; /*pour mettre un fond dessous*/
+    position:absolute; /*pour qu'il reste en bas*/
+    width:100%; /*pour qu'il prenne toute la largeur*/
+    padding-top:20px; /*pour une marge en haut*/
+    height:90px; /*pour limiter la hauteur*/
+}
+
+#icon :hover
+{
+    transform: scale(1.5); /*pour que la petite icone de twitter devienne plus grosse quand on passe la souris dessus*/
+    transition: 0.1s; /*le temps que doit prendre la transition*/
+}
+
+@keyframes titre {
+    0% {
+        opacity: 0;
+        transform: translateY(180px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

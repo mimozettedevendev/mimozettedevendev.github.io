@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+/* ************ Les réglages de bases ************* *//* ************** le fond d'écran *************** */
+body{
+    font-family: 'Courier New', 'Special Elite', 'Roboto Mono', Crimson Text', 'Titillium Web', 'Advent Pro', 'cursive', 'sans-serif';
+    font-size: xx-large; /*je ne comprends pas pourquoi le texte n'est pas jaune, mais quand j'ai essayer de le supprimer, ça a fait beuguer tout le reste, alors j'ai remis comme c'était*/
+    color: lime;
+    margin-left: 40px; /*une marge de 40 pixel à gauche*/
+    margin-top: 60px; /*pour mettre une marge en haut, mais ça ne fonctionne pas*/
+    background-image: url("screen.jpg"); /*mon fond d'ecran*/
+    background-position: fixed no-repeat; /*pour que le fond d'ecran ne bouge pas*/
+    text-align: justify /*pour que le texte soit justifié*/
+}
+
+h1{
+    background-color: rgb(1, 158, 72); /*pour que le titre soit sur un bandeau de couleur */
+    color:rgb(65, 247, 74);
+    animation: titre ease 2.5s;
+}
+
+img{
+    border-radius: 10em; /*pour que l'image soit ronde*/
+    float: right; /*pour qu'elle soit placée à droite du texte*/
+}
+ul{
+
+    border: 3px limegreen inset solid;
+    border-radius: 3px;
+}
+
+/*pour une raison que j'ai mis très longtemps à déterminer, je n'arrivais pas à appliquer ma mise en page de l'accueil à mes autres pages. J'ai fini par voir que quand je me mettais au dessus du lien vers la page css, le lien n'était pas le même que pour l'autre fichier. Je viens de découvrir (on est le 26/07) le moyen pour changer cela mais comme j'avais déjà fait une autre mise en page, je ne change rien.*/
+@keyframes titre {
+    0% {
+        opacity: 0;
+        transform: translateY(180px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*animation sur le titre*/
